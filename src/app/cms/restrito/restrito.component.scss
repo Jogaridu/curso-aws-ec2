@@ -1,0 +1,48 @@
+.background-login {
+    background: linear-gradient(0deg, rgba(11,11,11,1) 0%, rgba(48,48,48,1) 25%, rgba(133,133,133,1) 50%, rgba(255,255,255,1) 100%);
+}
+
+.container-login {
+    justify-content: center;
+}
+
+.logo-login {
+    font-size: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: #707070;
+}
+
+.fonte-login {
+    color: #707070;
+    font-family: 'Roboto', sans-serif;
+}
+
+.input-login {
+    border-radius: 5px !important;
+}
+
+.btn-login {
+    background-color: #000000 !important;
+    color: #fff !important;
+    border-radius: 5px !important;
+
+    &:hover {
+        background-color: #202020 !important;
+        color: #fff !important;
+    }
+
+    &:active {
+        background-color: #404040 !important;
+    }
+
+    &:focus {
+        color: #fff !important;
+        box-shadow: none !important;
+        outline: none;
+    }
+}
+
+.titulo-login {
+    margin-bottom: 4rem;
+}

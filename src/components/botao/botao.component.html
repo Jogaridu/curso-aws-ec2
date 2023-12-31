@@ -1,0 +1,5 @@
+<ion-button mode="md" class="btn-{{tipoBotao}}" [disabled]="disabled || mostrarSpinner" expand="block" fill="clear"
+    shape="round" (click)="navegar()">
+    <h6 *ngIf="!mostrarSpinner">{{txtBotao}}</h6>
+    <ion-spinner *ngIf="mostrarSpinner"></ion-spinner>
+</ion-button>

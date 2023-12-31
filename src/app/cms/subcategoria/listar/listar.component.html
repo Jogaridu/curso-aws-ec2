@@ -1,0 +1,78 @@
+<div class="row">
+    <div class="col-xl-12 col-md-12 mb-4">
+        <div class="card shadow h-100">
+            <div class="card-header header-filtrar">
+                <div class="text-xs font-weight-bold text-uppercase m-0 titulo-header-filtrar">
+                    Filtrar
+                </div>
+            </div>
+            <div class="card-body [#filtro_ativo#]">
+                <form action="/usuarios/Filtrar" method="post">
+                    <div class="row">
+                        <div class="col-xl-3 col-md-4">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="nome" id="nome"
+                                    [(ngModel)]="filtros['nome']" aria-describedby="Filtrar pelo nome do usuário"
+                                    placeholder="Nome">
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-4">
+                            <div class="form-group">
+                                <select class="custom-select" name="status" id="status"
+                                    [(ngModel)]="filtros['=status']">
+                                    <option value="">Status</option>
+                                    <option value="ativo">Ativo</option>
+                                    <option value="inativo">Inativo</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-4">
+                            <div class="row">
+                                <div class="col-xl-6">
+                                    <button type="submit" class="btn btn-block btn-modulo" (click)="filtrar()">
+                                        <i class="fas fa-filter fa-sm icon-btn-modulo"></i>
+                                        Filtrar
+                                    </button>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="btn btn-secondary btn-block" (click)="limparFiltros()"
+                                        *ngIf="!semFiltros"><i class="fas fa-search-minus fa-sm"></i> Limpar</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xl-12 col-md-12 mb-4">
+        <div class="card shadow h-100 border-table">
+            <div class="card-body card-tabela">
+                <div class="table-responsive border-table text-center">
+                    <table class="table table-hover table-striped text-center" id="lista-usuarios" *ngIf="!semDados">
+                        <thead>
+                            <tr id="lista-usuarios_row_0">
+                                <td>Nome</td>
+                                <td>Status</td>
+                                <td>Ação</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="lista-usuarios_row_1" *ngFor="let dado of dados">
+                                <td>{{dado['nome']}}</td>
+                                <td>{{dado['status']}}</td>
+                                <td>
+                                    <div class="btn btn-sm btn-modulo" (click)="verConteudo(dado['id'])">Ver</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div *ngIf="semDados" class="p-3">Nenhum dado encontrado.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

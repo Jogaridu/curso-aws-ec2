@@ -1,0 +1,104 @@
+<div class="row">
+    <div class="col-xl-12 col-md-12 mb-4">
+
+        <form method="post" id="form-cadastrar">
+            <div class="card shadow h-100">
+                <div class="card-header header-filtrar borda-header-filtrar">
+                    <div class="text-xs font-weight-bold text-uppercase m-0 titulo-header-filtrar">
+                        Cadastrar cor
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="tab-content" id="abasModuloConteudo">
+                        <div class="tab-pane fade show active" id="cadastro" role="tabpanel"
+                            aria-labelledby="cadastro-abas">
+                            <div class="row">
+
+                                <div class="col-md-12 text-center" *ngIf="dados['tipo'] == 'Personalizado'">
+
+                                    <label for="avatar">
+                                        <img width="200" height="200" [(src)]="imagem" id="imgavatar"
+                                            class="mb-3 img-avatar user-avatar" />
+                                    </label>
+                                    <input type="file" #avatar name="avatar" id="avatar" class="form-control d-none"
+                                        accept="image/*" (change)="carregarImagem(avatar)">
+
+                                </div>
+
+                                <div class="col-xl-3 col-md-4">
+                                    <div class="form-group">
+                                        <label for="nome">Nome*</label>
+                                        <input type="text" class="form-control" name="nome" id="row-nome"
+                                            [(ngModel)]="dados['nome']" placeholder="Ex: Branco">
+                                        <p class="erro-input" *ngIf="errorForm.nome && errorForm.nome === true">
+                                            {{msgErrorForm.nome}}
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-3 col-md-4" *ngIf="dados['tipo'] == 'Sólido'">
+                                    <div class="form-group">
+                                        <label for="hexadecimal">Hexadecimal*</label>
+                                        <input type="text" class="form-control" name="hexadecimal" id="row-hexadecimal"
+                                            [(ngModel)]="dados['hexadecimal']" placeholder="Ex: #FFF" maxlength="7"
+                                            [(colorPicker)]="dados['hexadecimal']"
+                                            [style.background]="dados['hexadecimal']" autocomplete="off">
+                                        <p class="erro-input"
+                                            *ngIf="errorForm.hexadecimal && errorForm.hexadecimal === true">
+                                            {{msgErrorForm.hexadecimal}}
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-3 col-md-4">
+                                    <div class="form-group">
+                                        <label for="tipo">Tipo*</label>
+                                        <select class="custom-select" name="tipo" id="row-tipo"
+                                            [(ngModel)]="dados['tipo']">
+                                            <option value="">Selecione</option>
+                                            <option value="Sólido">Sólido</option>
+                                            <option value="Personalizado">Personalizado</option>
+                                        </select>
+                                        <p class="erro-input" *ngIf="errorForm.tipo && errorForm.tipo === true">
+                                            {{msgErrorForm.tipo}}
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-3 col-md-4">
+                                    <div class="form-group">
+                                        <label for="status">Status*</label>
+                                        <select class="custom-select" name="status" id="row-status"
+                                            [(ngModel)]="dados['status']">
+                                            <option value="">Selecione</option>
+                                            <option value="Ativo">Ativo</option>
+                                            <option value="Inativo">Inativo</option>
+                                        </select>
+                                        <p class="erro-input" *ngIf="errorForm.status && errorForm.status === true">
+                                            {{msgErrorForm.status}}
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-3 col-md-4">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-xl-2 offset-xl-10">
+                            <button type="button" class="btn m-0 btn-block btn-modulo" id="btn-salvar"
+                                [ngClass]="{'carregando': carregando}" [disabled]="carregando" (click)="cadastrar()">
+                                Salvar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>

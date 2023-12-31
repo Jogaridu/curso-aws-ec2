@@ -1,0 +1,75 @@
+{
+    "nomeModulo": "Categorias",
+    "nomeTabela": "categorias",
+    "crud": {
+        "listar": true,
+        "ver": true,
+        "cadastrar": true
+    },
+    "dadosInputs": [
+        {
+            "nome": "nome",
+            "tipo": "text",
+            "obrigatorio": true,
+            "placeholder": "Ex: Plus size",
+            "listar": true,
+            "filtrar": true
+        },
+        {
+            "nome": "tipo",
+            "tipo": "select",
+            "opcoes": [
+                {
+                    "value": "roupas",
+                    "texto": "Roupas"
+                },
+                {
+                    "value": "pessoas",
+                    "texto": "Pessoas"
+                }
+            ],
+            "obrigatorio": true,
+            "listar": true,
+            "filtrar": true
+        },
+        {
+            "nome": "status",
+            "tipo": "select",
+            "opcoes": [
+                {
+                    "value": "ativo",
+                    "texto": "Ativo"
+                },
+                {
+                    "value": "inativo",
+                    "texto": "Inativo"
+                }
+            ],
+            "obrigatorio": true,
+            "listar": true,
+            "filtrar": true
+        },
+        {
+            "nome": "status",
+            "tipo": "select-mult",
+            "dadosExternos": true,
+            "nomeTabela": "subcategorias",
+            "configMult": {
+                "idField": "id",
+                "textField": "nome",
+                "selectAllText": "Todos",
+                "unSelectAllText": "Desmarcar todos"
+            },
+            "obrigatorio": true,
+            "listar": true,
+            "filtrar": true
+        },
+        {
+            "nome": "imagem",
+            "tipo": "image",
+            "obrigatorio": true,
+            "listar": true,
+            "filtrar": true
+        }
+    ]
+}

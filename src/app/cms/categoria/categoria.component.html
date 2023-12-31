@@ -1,0 +1,28 @@
+<div id="wrapper">
+
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <div id="content">
+
+            <div class="container-fluid">
+
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 titulo-modulo">Categoria</h1>
+                    <div class="d-sm-inline-block btn shadow-sm btn-modulo" (click)="alterarModo('cadastrar')"
+                        *ngIf="modo == 'listar'"><i class="fas fa-plus fa-sm icon-btn-modulo"></i>Cadastrar</div>
+
+                    <div class="d-sm-inline-block btn shadow-sm btn-modulo" (click)="alterarModo('listar')"
+                        *ngIf="modo != 'listar'"><i class="fas fa-chevron-left fa-sm icon-btn-modulo"></i>Voltar</div>
+                </div>
+
+                <app-listar *ngIf="modo === 'listar'" (ver)="alterarModo('ver')"></app-listar>
+                <app-cadastrar *ngIf="modo === 'cadastrar'" (listar)="alterarModo('listar')"></app-cadastrar>
+                <app-ver *ngIf="modo === 'ver'" (listar)="alterarModo('listar')"></app-ver>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

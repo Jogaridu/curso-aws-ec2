@@ -1,0 +1,39 @@
+h6 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 17px;
+    text-transform: lowercase;
+    
+    &::first-letter {
+        text-transform: uppercase;
+    }
+}
+
+ion-spinner {
+    width: 24px;
+    height: 24px;
+}
+
+ion-button {
+    filter: drop-shadow(1px 4px 16px rgba(0, 0, 0, 0.17));
+    height: 45px;
+    --border-radius: 10px;
+}
+
+.btn-primario {
+    --background: var(--ion-color-primaria);
+    --color: var(--ion-color-branco);
+}
+
+.btn-secundario {
+    --background: var(--ion-color-branco);
+    --color: var(--ion-color-primaria);
+    border: 1px solid var(--ion-color-primaria);
+    border-radius: 10px;
+}
+
+.btn-inativo {
+    --background: var(--ion-color-comando);
+    --color: var(--ion-color-branco); 
+    opacity: 1;
+}

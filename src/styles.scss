@@ -1,0 +1,184 @@
+/* You can add global styles to this file, and also import other style files */
+// @import "~bootstrap/scss/bootstrap";
+// @import '~ngx-toastr/toastr-bs4-alert';
+
+@import "scss/reset.scss";
+@import "scss/spacing";
+@import "scss/classes";
+
+.toast-error,
+.toast-success {
+    color: #f5f5f5 !important;
+    font-size: 0.85rem !important;
+}
+
+.toast-error {
+    background-image: url(/assets/icons/toast-error.svg);
+}
+
+#toast-container > div {
+    width: 350px;
+}
+
+.erro-input {
+    color: #EA1F44 !important;
+    font-size: 13px !important;
+    text-align: left;
+    line-height: 1;
+    margin: 0;
+    margin-left: 8px;
+}
+
+.btn-modulo i {
+    margin-right: 6px;
+}
+
+.btn-modulo.carregando {
+    background-image: url(/assets/images/carregando.svg);
+    background-size: 16%;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: 200%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.btn-modulo {
+    background-color: #57a231e3;
+    color: #ffff;
+    font-family: Roboto;
+  }
+  
+.btn-modulo:hover {
+    color: #ffffff;
+}
+
+.btn-modulo:hover {
+    background-color: #358010c1;
+}
+
+.btn-modulo:active {
+    background-color: #237000b0;
+}
+
+.btn-modulo:focus {
+    background-color: #237000b0;
+}
+
+.icon-btn-modulo {
+    color: #ffffff;
+}
+
+.header-filtrar {
+    background-color: #000;
+}
+
+.borda-header-filtrar {
+    // border-radius: 0 calc(0.35rem - 1px) 0 0 !important;
+}
+
+#imgavatar {
+    border-radius: 10px;
+}
+
+.titulo-header-filtrar {
+    color: #ffffff;
+    font-family: Roboto;
+}
+
+.card-tabela {
+    padding: 0;
+}
+
+.thead-table thead,
+    #lista-usuarios thead {
+    background-color: #000;
+    color: #fff;
+    font-family: Roboto;
+    text-align: center;
+}
+
+.tbody-table tbody,
+    #lista-usuarios tbody {
+    text-align: center;
+    font-family: Roboto;
+}
+
+.border-table {
+    border-radius: 8px 8px 0 0;
+}
+
+.border-table p {
+    padding: 1rem 0 0 1rem;
+}
+
+.card-footer {
+    background-color: unset !important;
+    border: none !important;
+}
+
+.nav-tabs .nav-link {
+    background-color: #ffffff;
+    color: #000;
+    border-color: #eaecf4 #eaecf4 #dddfeb;
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+    background-color: #000;
+    color: #ffffff;
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
+    background-color: #000;
+    border-radius: 5px;
+    border-color: #000;
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #000;
+    border-radius: 5px;
+    border-color: #000;
+}
+
+.-auservatar:hover {
+    cursor: pointer;
+}
+
+#lista-permissoes {
+    font-family: "OpenSans-Medium";
+    color: #101526;
+}
+
+#lista-permissoes_row_0 {
+    color: #000;
+}
+
+.table-hover tbody tr:hover {
+    color: #101526;
+    background-color: #1c306d2e;
+}
+
+.table-hover tbody tr {
+    color: #101526a8;
+}
+
+.card {
+    border-top: none;
+}
+
+#senha:focus {
+    color: #5c5959f5;
+}
+
+.btn:focus {
+    box-shadow: none !important;
+}
+
+.form-control, label {
+    font-family: 'Arial' !important;
+}
+
+label {
+    color: #00031b;
+}
